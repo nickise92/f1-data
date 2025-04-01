@@ -1,0 +1,12 @@
+name: f1-data
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python
+  - flask
+  - matplotlib
+  - pandas
+  - pip
+  - pip:
+      - fastf1
