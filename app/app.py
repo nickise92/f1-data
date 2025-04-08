@@ -46,7 +46,7 @@ def index():
     session = fastf1.get_session(2025, selected_gp, 'R')
     try:
         session.load()
-    except valueError as e:
+    except ValueError as e:
         if 'testing' in str(e):
             return render_template("error.html", message="L'evento selezionato non è una gara.")
 
