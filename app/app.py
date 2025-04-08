@@ -13,7 +13,8 @@ import os
 BACKGROUND = '#232323'
 FOREGROUND = '#C7C7C7'
 
-
+# Dynamic port config for Render
+port = int(os.environ.get("PORT", 5000))
 
 app = Flask(__name__)
 
@@ -74,7 +75,7 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=port)
 
 
  # # Get pilots list
