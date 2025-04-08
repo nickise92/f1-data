@@ -1,0 +1,126 @@
+/* Reset e base */
+header {
+    background-color: #2A2625;
+    border-bottom: solid 2px #504B4A;
+    color: #504B4A;
+    padding-top: 10px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background-color: #232323;
+    color: #C7C7C7;
+}
+
+/* Contenitore principale */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Dropdown piloti */
+.pilot-selector {
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+select {
+    padding: 0.5rem;
+    background-color: #2A2625;
+    color: #C7C7C7;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Bottone submit */
+button {
+    padding: 0.5rem 1rem;
+    background-color: #3A3534;
+    color: #C7C7C7;
+    border: 1px solid #555;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #504B4A;
+}
+
+/* Grafico */
+.plot-container {
+    margin-top: 2rem;
+}
+
+img.plot {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(0,0,0,0.5);
+}
+
+/* Titoli */
+h1, h2 {
+    color: #C7C7C7;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Elementi secondari */
+label,
+small,
+footer {
+    color: #AAAAAA;
+}
+
+.graph-board {
+    background-color: #232323;
+    background-radius: 15px;
+    border-radius: 15px;
+    border-color: #232323;
+}
+
+.gp-selector-container {
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.race-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 2rem;
+}
+
+.starting-grid, .race-data, .final-standings {
+    background-color: #2a2625;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 30%;
+}
+
+h3 {
+    color: #C7C7C7;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    color: #C7C7C7;
+    margin-bottom: 0.5rem;
+}
+
+.race-data p {
+    color: #C7C7C7;
+}

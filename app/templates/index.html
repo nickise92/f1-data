@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard F1 2025</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>🏁 F1 2025 Telemetry Dashboard</h1>
+    </header>
+
+    <div class="gp-selector-container">
+        <form method="POST">
+            <label for="selected_gp">Gran Premio:</label>
+            <select name="selected_gp" id="selected_gp">
+                {% for gp in gps %}
+                    <option value="{{ gp.round }}" {% if not gp.has_happened %}disabled{% endif %}
+                            {% if gp.round == selected_gp %}selected{% endif %}>
+                        {{ gp.name }} {% if not gp.has_happened %}(non ancora disputato){% endif %}
+                    </option>
+                {% endfor %}
+            </select>
+            <button type="submit">Carica</button>
+        </form>
+    </div>
+
+    <div class="race-summary">
+        <!-- Starting grid -->
+        <div class="starting-grid">
+            <h3>Griglia di Partenza</h3>
+            <ul>
+                {% for row in starting_grid.iterrows() %}
+                    <li>
+                       {{ row[1]['GridPosition'] }} - {{row[1]['Abbreviation'] }} {{ row[1]['DriverNumber'] }}
+                        - {{ row[1]['TeamName'] }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Race data -->
+        <div class="race-data">
+            <h3>Informazioni Gara</h3>
+            <p><strong>Giro veloce:</strong> {{ fastest_lap['LapTime'] }}</p>
+        </div>
+
+        <!-- Final standings -->
+        <div class="final-standings">
+            <h3>Classifica Finale</h3>
+            <ul>
+                {% for row in final_standings.iterrows() %}
+                    <li>{{ row[1]['ClassifiedPosition'] }} - {{ row[1]['Abbreviation'] }}  {{row[1]['DriverNumber'] }}
+                        - {{ row[1]['TeamName'] }} - {{ row[1]['Points'] }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
